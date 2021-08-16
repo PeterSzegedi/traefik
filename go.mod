@@ -15,6 +15,7 @@ require (
 	github.com/cenkalti/backoff/v4 v4.1.0
 	github.com/containerd/containerd v1.3.2 // indirect
 	github.com/containous/alice v0.0.0-20181107144136-d83ebdd94cbd
+	github.com/containous/go-bindata v1.0.0 // indirect
 	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf
 	github.com/davecgh/go-spew v1.1.1
 	github.com/docker/cli v0.0.0-20200221155518-740919cc7fc0
@@ -48,6 +49,7 @@ require (
 	github.com/libkermit/compose v0.0.0-20171122111507-c04e39c026ad
 	github.com/libkermit/docker v0.0.0-20171122101128-e6674d32b807
 	github.com/libkermit/docker-check v0.0.0-20171122104347-1113af38e591
+	github.com/lightstep/lightstep-tracer-go v0.25.0 // indirect
 	github.com/lucas-clemente/quic-go v0.20.1
 	github.com/mailgun/ttlmap v0.0.0-20170619185759-c1c17f74874f
 	github.com/miekg/dns v1.1.43
