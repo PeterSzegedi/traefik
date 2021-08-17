@@ -22,15 +22,22 @@ type Config struct {
 // Setup sets up the tracer.
 func (c *Config) Setup(serviceName string) (opentracing.Tracer, io.Closer, error) {
 	options := lightstep.Options{}
+	log.Infof("Setting up LS tracer")
 
 	if c.ServerHost != "" {
 		options = lightstep.Options{
 			AccessToken: c.AccessToken,
 			Collector:   lightstep.Endpoint{Host: c.ServerHost, Port: c.ServerPort, Plaintext: c.Plaintext},
+			Tags: map[string]interface{}{
+				lightstep.ComponentNameKey: "peter-test-service",
+			},
 		}
 	} else {
 		options = lightstep.Options{
 			AccessToken: c.AccessToken,
+			Tags: map[string]interface{}{
+				lightstep.ComponentNameKey: "peter-test-service",
+			},
 		}
 	}
 
