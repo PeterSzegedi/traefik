@@ -47,13 +47,13 @@ serverPort is the listener port of the Lightstep Satellite server.
 ```yaml tab="File (YAML)"
 tracing:
   lightstep:
-    serverPort: "8383"
+    serverPort: 8383
 ```
 
 ```toml tab="File (TOML)"
 [tracing]
   [tracing.lightstep]
-    serverPort = "8383"
+    serverPort = 8383
 ```
 
 ```bash tab="CLI"
