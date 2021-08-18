@@ -57,7 +57,7 @@ tracing:
 ```
 
 ```bash tab="CLI"
---tracing.lightstep.serverport="8383"
+--tracing.lightstep.serverport=8383
 ```
 
 #### `Plaintext`
