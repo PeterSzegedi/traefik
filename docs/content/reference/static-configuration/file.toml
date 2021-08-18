@@ -345,7 +345,7 @@
     serviceEnvironment = "foobar"
   [tracing.lightstep]
     serverHost = "foobar"
-    serverPort = "foobar"
+    serverPort = 8383
     plaintext = true
     accessToken = "foobar"
 

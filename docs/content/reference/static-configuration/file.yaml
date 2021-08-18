@@ -365,7 +365,7 @@ tracing:
     serviceEnvironment: foobar
   lightstep:
     serverHost: foobar
-    serverPort: foobar
+    serverPort: 8383
     plaintext: foobar
     accessToken: foobar
 hostResolver:
