@@ -3,7 +3,7 @@ package lightstep
 import (
 	"io"
 
-	lightstep "github.com/lightstep/lightstep-tracer-go"
+	"github.com/lightstep/lightstep-tracer-go"
 	"github.com/opentracing/opentracing-go"
 	"github.com/traefik/traefik/v2/pkg/log"
 )
@@ -22,30 +22,30 @@ type Config struct {
 // Setup sets up the tracer.
 func (c *Config) Setup(serviceName string) (opentracing.Tracer, io.Closer, error) {
 	options := lightstep.Options{}
-	log.Infof("Setting up LS tracer")
+	log.Infof("Setting up LS tracer with service name %s", serviceName)
 
 	if c.ServerHost != "" {
 		options = lightstep.Options{
 			AccessToken: c.AccessToken,
 			Collector:   lightstep.Endpoint{Host: c.ServerHost, Port: c.ServerPort, Plaintext: c.Plaintext},
 			Tags: map[string]interface{}{
-				lightstep.ComponentNameKey: "peter-test-service",
+				lightstep.ComponentNameKey: serviceName,
 			},
 		}
 	} else {
 		options = lightstep.Options{
 			AccessToken: c.AccessToken,
 			Tags: map[string]interface{}{
-				lightstep.ComponentNameKey: "peter-test-service",
+				lightstep.ComponentNameKey: serviceName,
 			},
 		}
 	}
 
-	tracer := lightstep.NewTracer(options)
+	lightStepTracer := lightstep.NewTracer(options)
 
-	opentracing.SetGlobalTracer(tracer)
+	opentracing.SetGlobalTracer(lightStepTracer)
 
 	log.WithoutContext().Debug("Lightstep tracer configured")
 
-	return tracer, nil, nil
+	return lightStepTracer, nil, nil
 }
